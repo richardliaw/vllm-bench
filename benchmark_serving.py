@@ -74,6 +74,7 @@ class BenchmarkMetrics:
     p99_itl_ms: float
     p90_itl_ms: float
     mean_e2e_s: float
+    median_e2e_s: float
     p99_e2e_s: float
     p90_e2e_s: float
 
@@ -319,6 +320,7 @@ def calculate_metrics(
         p90_itl_ms=np.percentile(itls or 0, 90) * 1000,
         p99_itl_ms=np.percentile(itls or 0, 99) * 1000,
         mean_e2e_s=np.mean(e2e_s or 0) * 1000,
+        median_e2e_s=np.median(e2e_s or 0) * 1000,
         p90_e2e_s=np.percentile(e2e_s or 0, 90) * 1000,
         p99_e2e_s=np.percentile(e2e_s or 0, 99) * 1000,
     )
@@ -458,6 +460,7 @@ async def benchmark(
         "p90_itl_ms": metrics.p90_itl_ms,
         "p99_itl_ms": metrics.p99_itl_ms,
         "mean_e2e_s": metrics.mean_e2e_s,
+        "median_e2e_s": metrics.median_e2e_s,
         "p99_e2e_s": metrics.p99_e2e_s,
         "p90_e2e_s": metrics.p90_e2e_s,
         "input_lens": [output.prompt_len for output in outputs],
