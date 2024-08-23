@@ -3,5 +3,6 @@ python benchmarks/benchmark_serving.py \
     --model neuralmagic/Meta-Llama-3-8B-Instruct-FP8 \
     --dataset-name conversations \
     --dataset-path ... \
-    --request-rate 2 \ 
+    --sharegpt-output-len 200 \
+    --request-rate 2 \
     --num-prompts 100
