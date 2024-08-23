@@ -1,8 +1,7 @@
-python benchmarks/benchmark_serving.py \
+python benchmark_serving.py \
     --backend vllm \
-    --model neuralmagic/Meta-Llama-3-8B-Instruct-FP8 \
+    --model meta-llama/Meta-Llama-3.1-8B-Instruct \
     --dataset-name conversations \
-    --dataset-path ... \
+    --dataset-path ~/online_compiled_orders.jsonl \
     --sharegpt-output-len 200 \
-    --request-rate 2 \
-    --num-prompts 100
+    --request-rate 1 --num-prompts 30

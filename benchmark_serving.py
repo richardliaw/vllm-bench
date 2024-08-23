@@ -523,7 +523,7 @@ def main(args: argparse.Namespace):
             dataset_path=args.dataset_path,
             num_requests=args.num_prompts,
             tokenizer=tokenizer,
-            fixed_output_len=args.sharegpt_output_len,
+            fixed_output_len=args.sharegpt_output_len
         )
 
     elif args.dataset_name == "sharegpt":
@@ -670,7 +670,7 @@ if __name__ == "__main__":
         "--dataset-name",
         type=str,
         default="sharegpt",
-        choices=["sharegpt", "sonnet", "conversations", "random"],
+        choices=["sharegpt", "sonnet", "random", "conversations"],
         help="Name of the dataset to benchmark on.",
     )
     parser.add_argument(
